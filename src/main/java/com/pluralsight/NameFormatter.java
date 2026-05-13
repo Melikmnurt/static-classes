@@ -10,6 +10,6 @@ public class NameFormatter {
         public static String format (String firstName, String lastName) {
 
         //Return the name in the required format.
-            return lastName + " , " + firstName;
+            return lastName + "," + firstName;
     }
 }
