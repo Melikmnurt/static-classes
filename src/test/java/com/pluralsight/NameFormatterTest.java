@@ -18,4 +18,24 @@ public class NameFormatterTest {
         //Assert
         assertEquals("Johnson,Mel", result);
     }
+    public void testFormatFullNameWithAllParts(){
+
+        //Arrange
+        String prefix = "Dr.";
+        String firstName = "Mel";
+        String middleName = "B";
+        String lastName = "Johnson";
+        String suffix = "PhD";
+
+        //Act
+        String result = NameFormatter.format(
+                prefix,
+                firstName,
+                middleName,
+                lastName,
+                suffix
+        );
+        //Assert
+        assertEquals("Johnson, Dr., Mel B, PhD", result);
+    }
 }

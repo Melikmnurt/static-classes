@@ -18,6 +18,30 @@ public class NameFormatter {
                                  String middleName,
                                  String lastName,
                                  String suffix){
+        //String building the formatted name with the last name.
+        String formattedName = lastName + ", ";
+
+        //Check if the prefix exists.
+        if (prefix != null && !prefix.isEmpty()){
+
+            //Add the prefix and a space
+            formattedName += prefix + " ";
+        }
+        //Add the first name
+        formattedName += firstName;
+
+        //Check if the middle name exists
+        if (middleName != null && !middleName.isEmpty()){
+
+            //Add a space and the middle name
+            formattedName += " " + middleName;
+        }
+        //Check if the suffix exists
+        if (suffix != null && suffix.isEmpty()){
+
+        }
+        //Return the completed formatted name
+        return formattedName;
 
     }
 }
