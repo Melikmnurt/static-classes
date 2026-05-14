@@ -10,7 +10,7 @@ public class NameFormatter {
         public static String format (String firstName, String lastName) {
 
         //Return the name in the required format.
-            return lastName + "," + firstName;
+            return lastName + ", " + firstName;
     }
     //This method formats a full name with optional parts
     public static String format (String prefix,
@@ -33,15 +33,21 @@ public class NameFormatter {
         //Check if the middle name exists
         if (middleName != null && !middleName.isEmpty()){
 
+            formattedName += ", " + suffix;
+
             //Add a space and the middle name
             formattedName += " " + middleName;
         }
         //Check if the suffix exists
-        if (suffix != null && suffix.isEmpty()){
+        if (suffix != null && !suffix.isEmpty()){
 
         }
         //Return the completed formatted name
         return formattedName;
+
+    }
+    //This method formats a complete full name string
+    public static String format (String fullName){
 
     }
 }
