@@ -33,13 +33,14 @@ public class NameFormatter {
         //Check if the middle name exists
         if (middleName != null && !middleName.isEmpty()){
 
-            formattedName += ", " + suffix;
-
             //Add a space and the middle name
             formattedName += " " + middleName;
         }
         //Check if the suffix exists
         if (suffix != null && !suffix.isEmpty()){
+
+            //Add a comma, space, and the suffix
+            formattedName += ", " + suffix;
 
         }
         //Return the completed formatted name
@@ -63,7 +64,7 @@ public class NameFormatter {
             suffix = parts[1].trim();
         }
         //Split the remaining full name into separate words
-        String[] nameParts = fullName.split("");
+        String[] nameParts = fullName.split(" ");
 
         //Create variables for each part of the name
         String prefix = "";
@@ -113,6 +114,6 @@ public class NameFormatter {
             }
         }
         //Call the overloaded format method to build the final formatted name
-        return format (prefix, firstName, middleName, lastName,suffix);
+        return format (prefix, firstName, middleName, lastName, suffix);
     }
 }

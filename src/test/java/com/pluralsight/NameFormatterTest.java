@@ -16,7 +16,7 @@ public class NameFormatterTest {
         String result = NameFormatter.format(firstName, lastName);
 
         //Assert
-        assertEquals("Johnson,Mel", result);
+        assertEquals("Johnson, Mel", result);
     }
     public void testFormatFullNameWithAllParts(){
 
@@ -37,5 +37,16 @@ public class NameFormatterTest {
         );
         //Assert
         assertEquals("Johnson, Dr., Mel B, PhD", result);
+    }
+    @Test
+    public void testFormatFullNameString(){
+        //Arrange
+        String fullName = "Dr. Mel B Johnson, PhD";
+
+        //Act
+        String result = NameFormatter.format(fullName);
+
+        //Assert
+        assertEquals("Johnson, Dr. Mel B, PhD", result);
     }
 }
