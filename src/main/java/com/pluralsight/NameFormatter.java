@@ -12,4 +12,12 @@ public class NameFormatter {
         //Return the name in the required format.
             return lastName + "," + firstName;
     }
+    //This method formats a full name with optional parts
+    public static String format (String prefix,
+                                 String firstName,
+                                 String middleName,
+                                 String lastName,
+                                 String suffix){
+
+    }
 }
