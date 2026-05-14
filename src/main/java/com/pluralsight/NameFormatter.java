@@ -48,6 +48,71 @@ public class NameFormatter {
     }
     //This method formats a complete full name string
     public static String format (String fullName){
+        String suffix = "";
 
+        //Check if the full name contains comma
+        if (fullName.contains(",")) {
+
+            //Split the name into two parts using the comma
+            String[] parts = fullName.split(",");
+
+            //Store the name part before the comma
+            fullName = parts[0].trim();
+
+            //Store the suffix after the comma
+            suffix = parts[1].trim();
+        }
+        //Split the remaining full name into separate words
+        String[] nameParts = fullName.split("");
+
+        //Create variables for each part of the name
+        String prefix = "";
+        String firstName = "";
+        String middleName = "";
+        String lastName = "";
+
+        //Check if the first word is a prefix
+        if (nameParts[0].endsWith(".")) {
+
+            //Store the prefix
+            prefix = nameParts[0];
+
+            //Store the first name
+            firstName = nameParts[1];
+
+            //Check if a middle name exists
+            if (nameParts.length == 4) {
+
+                //Store the middle name
+                middleName = nameParts[2];
+
+                //Store the last name
+                lastName = nameParts[3];
+
+            } else {
+                //Store the last name when there is no middle name
+                lastName = nameParts[2];
+            }
+        }else {
+            //Store the first name
+            firstName = nameParts[0];
+
+            //Check if a middle name exists
+            if (nameParts.length ==3){
+
+                //Store the middle name
+                middleName = nameParts[1];
+
+                //Store the last name
+                lastName = nameParts[2];
+
+            }else{
+                //Store the last name when there is no middle name
+                lastName = nameParts[1];
+
+            }
+        }
+        //Call the overloaded format method to build the final formatted name
+        return format (prefix, firstName, middleName, lastName,suffix);
     }
 }
